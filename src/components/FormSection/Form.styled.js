@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { theme } from 'commonStyle/Thema';
-import { ErrorMessage, Field, Form } from 'formik';
+import { Field, Form } from 'formik';
 
 export const FormContact = styled(Form)`
   display: flex;
