@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ItemList, ItemListButton, ItemListParagr } from './Renderlist.styled';
+
 export const Renderlist = ({ contact, onRemove }) => {
   return (
     contact.length > 0 &&
@@ -16,4 +18,9 @@ export const Renderlist = ({ contact, onRemove }) => {
       );
     })
   );
+};
+
+Renderlist.propTypes = {
+  contact: PropTypes.array.isRequired,
+  onRemove: PropTypes.func.isRequired,
 };

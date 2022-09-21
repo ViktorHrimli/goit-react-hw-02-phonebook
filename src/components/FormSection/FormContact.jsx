@@ -1,7 +1,8 @@
-import { Box } from 'commonStyle/Common.styled';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { Box } from 'commonStyle/Common.styled';
 import { FormContact, FormLabel, Input, FormButton, Eror } from './Form.styled';
 const validationSchema = Yup.object().shape({
   name: Yup.string().required(),
@@ -46,6 +47,8 @@ export const Formes = ({ onSubmit }) => {
     </Formik>
   );
 };
+
+Formes.propTypes = PropTypes.func.isRequired;
 
 // export class Form extends Component {
 //   state = { name: '', number: '' };
