@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { AiFillPhone, AiOutlineUserAdd } from 'react-icons/ai';
+
 import { theme } from 'commonStyle/Thema';
 import { Field, Form } from 'formik';
 
@@ -19,6 +21,7 @@ export const FormLabel = styled.label`
 `;
 
 export const Input = styled(Field)`
+  position: relative;
   width: ${`${theme.space[8]}px`};
   padding: ${`${theme.space[2]}px`};
   outline: none;
@@ -64,4 +67,21 @@ export const Eror = styled.p`
   font-size: ${theme.fontSizes.m};
   font-weight: ${theme.fontWeights.bold};
   color: ${theme.colors.muted};
+`;
+
+export const IconsUser = styled(AiOutlineUserAdd)`
+  position: absolute;
+  display: inline-flex;
+  top: 355px;
+  left: 617px;
+  fill: ${theme.colors.accent};
+`;
+
+export const Icons = styled(AiFillPhone)`
+  position: absolute;
+  display: inline-flex;
+  top: 435px;
+  left: 685px;
+  rotate: 120deg;
+  fill: ${theme.colors.accent};
 `;
