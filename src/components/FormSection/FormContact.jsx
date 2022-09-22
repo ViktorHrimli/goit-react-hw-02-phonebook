@@ -4,15 +4,7 @@ import * as Yup from 'yup';
 import { Formik, ErrorMessage } from 'formik';
 //
 import { Box } from 'commonStyle/Common.styled';
-import {
-  FormContact,
-  FormLabel,
-  Input,
-  FormButton,
-  Eror,
-  Icons,
-  IconsUser,
-} from './Form.styled';
+import { FormContact, FormLabel, Input, FormButton, Eror } from './Form.styled';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required(),
@@ -40,14 +32,12 @@ export const Formes = ({ onSubmit }) => {
           justifyContent="center"
         >
           <FormLabel>
-            <IconsUser />
             Name
             <Input type="text" name="name" />
             <ErrorMessage name="name" render={msg => <Eror>{msg}</Eror>} />
           </FormLabel>
 
           <FormLabel>
-            <Icons />
             Telephone
             <Input type="tel" name="number" />
             <ErrorMessage name="number" render={msg => <Eror>{msg}</Eror>} />
