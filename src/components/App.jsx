@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import Notiflix from 'notiflix';
-import { ThemeProvider } from 'styled-components';
-import { theme } from 'commonStyle/Thema';
 import { Box } from 'commonStyle/Common.styled';
 import { nanoid } from 'nanoid';
-import { Formes } from './FormSection/FormContact';
+import { Formes } from './FormSection/Form';
 import { Filter } from './FilterSection/Filter';
-import { Renderlist } from './RenderList/Renderlist';
-import { ContactList } from './RenderList/Renderlist.styled';
+import { Renderlist } from './ListContact/ListContact';
+import { ContactList } from './ListContact/ListContact.styled';
 
 export class Phonebook extends Component {
   state = {
@@ -49,25 +47,15 @@ export class Phonebook extends Component {
     const { filter } = this.state;
     const contacts = this.renderContact();
     return (
-      <ThemeProvider theme={theme}>
-        <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          padding={`${theme.space[8]}px`}
-          margin="auto"
-          width={`${theme.space[8] * 2}px`}
-          fontFamily={theme.fonts.monospace}
-        >
-          <h1>Phonebook</h1>
-          <Formes onSubmit={this.hendleSubmit} />
-          <h2>Contacts</h2>
-          <Filter value={filter} onFilter={this.renderFilter} />
-          <ContactList>
-            <Renderlist onRemove={this.removeBtn} contact={contacts} />
-          </ContactList>
-        </Box>
-      </ThemeProvider>
+      <Box display="flex" flexDirection="column" alignItems="center" p={8}>
+        <h1>Phonebook</h1>
+        <Formes onSubmit={this.hendleSubmit} />
+        <h2>Contacts</h2>
+        <Filter value={filter} onFilter={this.renderFilter} />
+        <ContactList>
+          <Renderlist onRemove={this.removeBtn} contact={contacts} />
+        </ContactList>
+      </Box>
     );
   }
 }
